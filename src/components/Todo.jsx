@@ -96,6 +96,8 @@ function Todo(props) {
             <span
               style={{
                 textDecoration: todo.completed ? "line-through" : "none",
+                wordWrap: "break-word",
+                maxWidth: "50%",
               }}
             >
               {todo.text}
