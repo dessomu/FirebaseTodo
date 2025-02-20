@@ -1,0 +1,117 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background-color: darkgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form{  
+  width: 300px;
+  padding: 30px;
+  background-color:white;
+  border: solid transparent ;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 1px 2px 3px grey;
+}
+.form input{
+  width:100% ;
+  padding:8px;
+  border: solid 1px skyblue;
+  border-radius: 8px;
+  background-color: rgb(209, 222, 227);
+  outline: none;
+  margin-bottom: 5px;
+}
+.form button{
+  width: 100%;
+  padding: 5px;
+  border: solid transparent;
+  border-radius: 5px;
+  background-color:dimgray;
+  color: #f2f2f2;
+}
+.signOut{
+  width: 80px;
+  padding: 3px;
+  border: solid transparent;
+  background-color: cornflowerblue;
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.main{
+  position: relative;
+  width: 400px;
+  height: 90vh;
+  background-color: antiquewhite;
+  border: solid 1px black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 30px;
+}
+.input-field{
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.input-field input, .input-field button{
+  width: 70%;
+  padding: 8px;
+  border: solid transparent;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 1px 1px 2px 0.5px black;
+}
+.input-field button{
+  width: 80px;
+  border: solid transparent;
+}
+.todos{
+  width: 100%;
+  height: max-content;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style-type: none;
+}
+.todos li{
+  width: 100%;
+  padding: 10px;
+  border: solid transparent;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+.todos img, .todos button{
+  border: solid transparent;
+  color: white;
+  margin-right: 5px;
+  padding: 3px;
+  border-radius: 4px;
+}
+.complete{
+  background-color: green;
+}
+.delete{
+  background-color: red;
+}
