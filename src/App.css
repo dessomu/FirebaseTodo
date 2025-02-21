@@ -11,6 +11,10 @@ body{
   justify-content: center;
   align-items: center;
 }
+body button:hover{
+cursor: pointer;
+filter: brightness(87%);
+}
 .form{  
   width: 300px;
   padding: 30px;
