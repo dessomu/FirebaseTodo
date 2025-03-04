@@ -14,6 +14,8 @@ function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
+  const [error, setError] = useState("");
+
 
   async function handleSignUp() {
     try {
@@ -25,10 +27,14 @@ function App() {
       console.log("User signed up", userCredential.user);
       setUser(userCredential.user);
     } catch (error) {
-      console.log("Sign Up Error", error.message);
+      setError(error.message.substring(10, error.message.length));
     }
     setEmail("");
     setPassword("");
+
+    if (email === "" || password === "") {
+      setError("Please fill all the fields");
+    }
   }
 
   async function handleSignIn() {
@@ -41,7 +47,11 @@ function App() {
       console.log("User signed in", userCredential.user);
       setUser(userCredential.user);
     } catch (error) {
-      console.log("Sign in error", error.message);
+      setError(error.message.substring(10, error.message.length));
+    }
+
+    if (email === "" || password === "") {
+      setError("Please fill all the fields");
     }
   }
 
@@ -49,7 +59,8 @@ function App() {
     try {
       await signOut(auth);
     } catch (error) {
-      console.log("Sign out error", error.message);
+      console.log(error.message);
+      
     }
     setUser(null);
     setEmail("");
@@ -60,7 +71,6 @@ function App() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log("User is signed in", user);
-        setUser(user);
       } else {
         console.log("User is signed out");
       }
@@ -70,6 +80,9 @@ function App() {
       unsubscribe();
     };
   }, []);
+
+
+
 
   if (!user) {
     return (
@@ -97,6 +110,7 @@ function App() {
         <button onClick={handleSignIn} className="signIn">
           Sign In
         </button>
+        {error? <div className="error-modal">{error}<button onClick={()=>setError("")} style={{background:"green",width:"50px"}}>Ok!</button></div> : null}
       </div>
     );
   }
