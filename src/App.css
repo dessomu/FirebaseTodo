@@ -95,12 +95,14 @@ filter: brightness(87%);
   
 }
 .input-field input, .input-field button{
-  width: 70%;
   padding: 8px;
   border: solid transparent;
   border-radius: 5px;
   outline: none;
   box-shadow: 1px 1px 2px 0.5px black;
+}
+.input-field input{
+  width: 70%;
 }
 .input-field button{
   width: 80px;
@@ -131,10 +133,65 @@ filter: brightness(87%);
   margin-right: 5px;
   padding: 3px;
   border-radius: 4px;
+  max-height: fit-content;
 }
 .complete{
   background-color: green;
 }
 .delete{
   background-color: red;
+}
+
+@media (max-width:375px) {
+ .form{
+  width: 250px;
+  gap: 5px;
+ }
+ .form input{
+  padding: 0.3rem;
+ }
+ .form button{
+  padding: 0.3rem;
+  font-size: 12px;
+ }
+ .input-field{
+  padding: 0.3rem;
+ }
+ .input-field input,.input-field button{
+  padding: 0.3rem;
+ }
+ .input-field button{
+  width: 70px;
+ }
+ .main{
+  width: 100dvw;
+  height: 100dvh;
+ }
+ .todos{
+  padding: 0;
+ }
+ .buttons{
+  display: flex;
+ }
+ .buttons button{
+  font-size: 12px;
+ }
+}
+
+@media (max-width:450px) {
+  .form{
+    width: 280px;
+    gap: 5px;
+  }
+  .form input{
+    padding:6px ;
+  }
+  .form button{
+    padding: 4px;
+    font-size: 13px;
+  }
+  .main{
+    width: 100dvw;
+    height: 100dvh;
+  }
 }
