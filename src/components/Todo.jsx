@@ -102,7 +102,7 @@ function Todo(props) {
             >
               {todo.text}
             </span>
-            <div>
+            <div className="buttons">
               <button
                 className="complete"
                 onClick={() => handleCompleteTodo(todo.id)}
